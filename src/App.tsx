@@ -1,7 +1,14 @@
 import React from "react"
+import { Reset } from "styled-reset"
+import Provider from "./context/ContextProvider"
 
 function App() {
-  return <div className="App">hello</div>
+  return (
+    <Provider>
+      <Reset />
+      <div className="App">hello</div>
+    </Provider>
+  )
 }
 
 export default App
