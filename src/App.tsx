@@ -1,13 +1,32 @@
 import React from "react"
-import { Reset } from "styled-reset"
+import { BrowserRouter } from "react-router-dom"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import reset from "styled-reset"
 import Provider from "./context/ContextProvider"
+import theme from "./theme/theme"
+import Main from "./sections/Main/Main"
 
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+  }
+`
 function App() {
   return (
-    <Provider>
-      <Reset />
-      <div className="App">hello</div>
-    </Provider>
+    <BrowserRouter>
+      <Provider>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <Main />
+        </ThemeProvider>
+      </Provider>
+    </BrowserRouter>
   )
 }
 

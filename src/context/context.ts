@@ -1,13 +1,14 @@
-import { createContext } from "react"
+import React, { createContext } from "react"
 
 export type Note = {
+  id: number
   timestamp: number
   markdownBody: string
 }
 
 type GlobalContext = {
   notes: Note[]
-  setNotes: (arg: Note[]) => void
+  setNotes: React.Dispatch<React.SetStateAction<Note[]>>
 }
 
 const defaultGlobalContext: GlobalContext = {
