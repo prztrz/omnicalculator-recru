@@ -18,13 +18,11 @@ export const Content = styled.div`
   padding-right: 8px;
 `
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.p<{ align?: "right" | "left" }>`
   font-size: ${({ theme }) => theme.FONT_SIZE.MEDIUM};
   color: ${({ theme }) => theme.COLORS.INK.DARK};
-
-  &:not(:first-child) {
-    padding-top: 8px;
-  }
+  padding-top: 8px;
+  text-align: ${({ align = "left" }) => align};
 `
 export const ButtonContainer = styled.div`
   display: flex;
@@ -46,6 +44,11 @@ export const NoteLink = styled(Link)`
   &:active {
     color: ${({ theme }) => darken(0.1, theme.COLORS.INK.DARK)};
   }
+`
+
+export const NoteSpan = styled.span`
+  color: ${({ theme }) => theme.COLORS.INK.DARK};
+  font-size: ${({ theme }) => theme.FONT_SIZE.SMALL};
 `
 
 export const Markdown = styled(ReactMarkdown)`
