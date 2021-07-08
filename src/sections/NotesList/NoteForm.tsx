@@ -4,7 +4,7 @@ import TextArea from "../../components/TextArea/TextArea"
 import globalContext from "../../context/context"
 import useForm, { FormFields } from "../../hooks/useForm"
 import Button, { BUTTON_VARIANT } from "../../components/Button/Button"
-import FormSubmitContainer from "./styles"
+import { FormSubmitContainer } from "./styles"
 
 const NoteForm = () => {
   const { setNotes } = useContext(globalContext)
